@@ -14,7 +14,7 @@ has_toc: false
 
 Snapshots are backups of a cluster's indexes and state. State includes cluster settings, node information, index metadata (mappings, settings, or templates), and shard allocation.
 
-Snapshots have two main uses:
+Snapshots have three main uses:
 
 - **Recovering from failure**
 
@@ -23,6 +23,10 @@ Snapshots have two main uses:
 - **Migrating from one cluster to another**
 
   For example, if you're moving from a proof-of-concept to a production cluster, you might take a snapshot of the former and restore it on the latter.
+
+- **Make use of searchable snapshots to save on storage/compute costs**
+
+  For example, if you have a high volume of data that is too expensive to retain on fast storage. You can store the data in a snapshots repository based on cheap storage while still being able to search through it.
 
 
 You can take and restore snapshots using the [snapshot API]({{site.url}}{{site.baseurl}}/opensearch/snapshots/snapshot-restore/). 
