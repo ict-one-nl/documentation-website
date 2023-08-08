@@ -35,7 +35,9 @@ services:
       - cluster.name=opensearch-cluster
       - node.name=opensearch-node1
       - node.roles=search
+      - node.search.cache.size=50%
 ```
+With the default settings you will need two search nodes to prevent a yellow cluster state with the default settings.
 
 ## Create a searchable snapshot index
 
